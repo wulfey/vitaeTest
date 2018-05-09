@@ -24,3 +24,18 @@ This assumes your opponent uses strategems 8 times over the course of the game.
 This runs 40000 executions. 
 This assumes you did get the VERITAE [try spending less CP at the start and flagging VERITAE to false].
 This assumes that you spend 3 1CP strategems for every 2 2CP and 1 3CP strategems.
+
+My results show that:
+
+on 18 base CP with the above configs:
+34.163975 spent CP on average over 40000 executions
+d6 avg:
+3.491 average dice roll on my d6() function
+
+not taking the VITAE and spending only 3CP at the start of the game gives:
+average:
+26.510925
+d6 avg:
+3.5134
+
+So YES YES YES spend those 2 CP to get the VITAE.  DO IT
