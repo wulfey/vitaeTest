@@ -1,9 +1,12 @@
 // config variables
-const CP = 18;
-const begin_minus = 5;
+const CP = 14;
+const visions_sanguinus = 2;
+const relic_spends = 3;
 const opponent_strats = 8;
 const execs = 40000;
 const VERITAE = true;
+const GRAND_STRATEGIST = true;
+const KUROVS = true;
 const STRATS = { 1: 1, 2: 1, 3: 1, 4: 2, 5: 2, 6: 3 };
 
 const d6 = () => {
@@ -12,9 +15,11 @@ const d6 = () => {
 
 const performStrat = spend => {
   let result = 0 - spend;
-  for (let i = 0; i < spend; i++) {
-    if (d6() >= 5) {
-      result++;
+  if(GRAND_STRATEGIST){
+    for (let i = 0; i < spend; i++) {
+      if (d6() >= 5) {
+        result++;
+      }
     }
   }
   if (VERITAE) {
@@ -47,8 +52,10 @@ const playGame = () => {
   const results = [];
   for (let i = 0; i < execs; i++) {
     let spent = 0;
-    let current = CP - begin_minus;
-    current += kurovs(opponent_strats);
+    let current = CP - visions_sanguinus - relic_spends;
+    if(KUROVS){
+      current += kurovs(opponent_strats);
+    }
     while (current > 0) {
       const roll = STRATS[d6()];
       const strat = roll > current ? current : roll;
